@@ -1,117 +1,110 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nguyễn Trọng Hưng - Trang Web Cá Nhân</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta charset="utf-8">
+    <title>Murach's Java Servlets and JSP</title>
+    <link rel="stylesheet" href="styles/survey.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        form {
+            margin: 20px 0;
+        }
+        .results {
+            margin-top: 20px;
+            padding: 10px;
+            background: #f4f4f4;
+            border: 1px solid #ddd;
+            display: none;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 14px;
+            color: #666;
+        }
+        .footer span {
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
 </head>
 <body>
-<!-- Header Section -->
-<header>
-    <nav>
-        <ul>
-            <li><a href="#home">Trang chủ</a></li>
-            <li><a href="#about">Giới thiệu</a></li>
-            <li><a href="#hobbies">Sở thích</a></li>
-            <li><a href="#projects">Dự án</a></li>
-            <li><a href="#contact">Liên hệ</a></li>
-        </ul>
-    </nav>
-</header>
+<form id="surveyForm">
+    <img src="images/murachlogo.jpg" alt="logo" />
+    <h1>Survey</h1>
+    <p>If you have a moment, we'd appreciate it if you would fill out this survey.</p>
 
-<!-- Home Section -->
-<section id="home">
-    <div class="home-content">
-        <h1>Xin chào, Đây là Website của</h1>
-        <h1><span>Nguyễn Trọng Hưng</span></h1>
-        <p>Web cá nhân nơi tôi chia sẻ các dự án và thử nghiệm cá nhân.</p>
-        <a href="#contact" class="btn">Hãy liên hệ tôi</a>
-    </div>
-    <div class="home-image">
-        <img src="image/avt.jpg" alt="Nguyễn Trọng Hưng">
-    </div>
-</section>
+    <h2>Your information:</h2>
+    <label>First Name</label>
+    <input type="text" name="firstName" required><br>
+    <label>Last Name</label>
+    <input type="text" name="lastName" required><br>
+    <label>Email</label>
+    <input type="email" name="email" required><br>
+    <label>Date of Birth</label>
+    <input type="text" name="DoB"><br>
 
-<!-- About Section -->
-<section id="about">
-    <h2>Giới thiệu</h2>
-    <div class="about-container">
-        <p><strong>Tên:</strong> Nguyễn Trọng Hưng</p>
-        <p><strong>Năm sinh:</strong> 2004</p>
-        <p><strong>Quê quán:</strong> Đắk Lắk</p>
-        <p><strong>Công việc:</strong> Sinh viên Khoa CNTT, ĐH Sư Phạm Kỹ Thuật Tp. Hồ Chí Minh</p>
-    </div>
-</section>
+    <h2>How did you hear about us?</h2>
+    <p>
+        <input type="radio" name="heardFrom" value="Social Media">Social Media
+        <input type="radio" name="heardFrom" value="Search Engine" checked>Search engine
+        <input type="radio" name="heardFrom" value="Friend">Word of mouth
+        <input type="radio" name="heardFrom" value="Other">Other
+    </p>
 
-<!-- Hobbies Section -->
-<section id="hobbies">
-    <h2>Sở thích</h2>
-    <div class="hobbies-container">
-        <div class="hobby">
-            <i class="fas fa-book"></i>
-            <h3>Đọc sách</h3>
-            <p>Yêu thích đọc sách để trau dồi kiến thức.</p>
-        </div>
-        <div class="hobby">
-            <i class="fas fa-futbol"></i>
-            <h3>Chơi thể thao</h3>
-            <p>Bóng đá và cầu lông là niềm đam mê.</p>
-        </div>
-        <div class="hobby">
-            <i class="fas fa-plane"></i>
-            <h3>Du lịch</h3>
-            <p>Khám phá vùng đất mới luôn thú vị.</p>
-        </div>
-    </div>
-</section>
+    <h2>Would you like to receive announcements about new CDs and special offers?</h2>
+    <p><input type="checkbox" name="wantsUpdates">YES, I'd like that.</p>
+    <p><input type="checkbox" name="emailOk">YES, please send me email announcements.</p>
 
-<!-- Projects Section -->
-<section id="projects">
-    <h2>Dự án</h2>
-    <div class="projects-container">
-        <div class="project">
-            <h3><a href="https://project1.example.com" target="_blank">Dự án 1</a></h3>
-            <p>Mô tả dự án 1.</p>
-        </div>
-        <div class="project">
-            <h3><a href="https://project2.example.com" target="_blank">Dự án 2</a></h3>
-            <p>Mô tả dự án 2.</p>
-        </div>
-        <div class="project">
-            <h3><a href="https://project3.example.com" target="_blank">Dự án 3</a></h3>
-            <p>Mô tả dự án 3.</p>
-        </div>
-        <div class="project">
-            <h3><a href="https://project4.example.com" target="_blank">Dự án 4</a></h3>
-            <p>Mô tả dự án 4.</p>
-        </div>
-        <div class="project">
-            <h3><a href="https://project5.example.com" target="_blank">Dự án 5</a></h3>
-            <p>Mô tả dự án 5.</p>
-        </div>
-        <div class="project">
-            <h3><a href="https://project6.example.com" target="_blank">Dự án 6</a></h3>
-            <p>Mô tả dự án 6.</p>
-        </div>
-        <div class="project">
-            <h3><a href="https://project7.example.com" target="_blank">Dự án 7</a></h3>
-            <p>Mô tả dự án 7.</p>
-        </div>
-    </div>
-</section>
+    <p>Please contact me by:
+        <select name="contactVia">
+            <option value="Both" selected>Email or postal mail</option>
+            <option value="Email">Email only</option>
+            <option value="Postal Mail">Postal mail only</option>
+        </select>
+    </p>
 
-<!-- Contact Section -->
-<section id="contact">
-    <h2>Liên hệ</h2>
-    <p>Email: hungnth036@gmail.com</p>
-    <p>SĐT: 0568855599</p>
-    <a href="mailto:hungnth036@gmail.com" class="btn">Gửi Email</a>
-</section>
+    <input type="submit" value="Submit">
+</form>
 
-<footer>
-    <p>&copy; 2024 Nguyễn Trọng Hưng. All rights reserved.</p>
-</footer>
+<div class="results" id="results">
+    <h2>Submitted Information</h2>
+    <p><strong>First Name:</strong> <span id="resultFirstName"></span></p>
+    <p><strong>Last Name:</strong> <span id="resultLastName"></span></p>
+    <p><strong>Email:</strong> <span id="resultEmail"></span></p>
+    <p><strong>Date of Birth:</strong> <span id="resultDoB"></span></p>
+    <p><strong>Heard From:</strong> <span id="resultHeardFrom"></span></p>
+    <p><strong>Wants Updates:</strong> <span id="resultWantsUpdates"></span></p>
+    <p><strong>Email Announcements:</strong> <span id="resultEmailOk"></span></p>
+    <p><strong>Contact Via:</strong> <span id="resultContactVia"></span></p>
+</div>
+
+<div class="footer">
+    <p>&copy; <span>NguyenHung</span>. All rights reserved. No copying allowed.</p>
+</div>
+
+<script>
+    document.getElementById('surveyForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Ngăn chặn hành vi gửi form mặc định
+
+        // Lấy dữ liệu từ form
+        const formData = new FormData(event.target);
+
+        // Cập nhật thông tin hiển thị kết quả
+        document.getElementById('resultFirstName').textContent = formData.get('firstName');
+        document.getElementById('resultLastName').textContent = formData.get('lastName');
+        document.getElementById('resultEmail').textContent = formData.get('email');
+        document.getElementById('resultDoB').textContent = formData.get('DoB') || 'N/A';
+        document.getElementById('resultHeardFrom').textContent = formData.get('heardFrom');
+        document.getElementById('resultWantsUpdates').textContent = formData.has('wantsUpdates') ? 'Yes' : 'No';
+        document.getElementById('resultEmailOk').textContent = formData.has('emailOk') ? 'Yes' : 'No';
+        document.getElementById('resultContactVia').textContent = formData.get('contactVia');
+
+        // Hiển thị kết quả
+        document.getElementById('results').style.display = 'block';
+    });
+</script>
 </body>
 </html>
